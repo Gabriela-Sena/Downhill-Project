@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DownHill.MVVM.Views.CadastroCorridaPage"
+             Title="Cadastro de Corridas">
+
+    <VerticalStackLayout Padding="20">
+
+        <!-- Campo para o nome da corrida -->
+        <Entry Placeholder="Nome da Corrida"
+               Text="{Binding Nome}" />
+
+        <!-- Campo para o número da prova -->
+        <Entry Placeholder="Número da Prova"
+               Text="{Binding NumeroDaProva}" 
+               Keyboard="Numeric" />
+
+        <!-- Campo para a data da prova -->
+        <Label Text="Data da Prova" />
+        <DatePicker Date="{Binding DataDaProva}" />
+
+        <!-- Campo para a hora da largada -->
+        <Label Text="Hora da Largada" />
+        <TimePicker Time="{Binding HoraDaLargada}" />
+
+        <!-- Botão para adicionar a corrida -->
+        <Button Text="Adicionar"
+                Command="{Binding AdicionarCorridaCommand}" />
+
+        <!-- Mensagem de erro ou sucesso -->
+        <Label Text="{Binding MensagemErro}" 
+               TextColor="Red" 
+               HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>

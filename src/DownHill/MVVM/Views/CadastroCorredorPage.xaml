@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DownHill.MVVM.Views.CadastroCorredorPage"
+             Title="Cadastro de Corredores">
+
+    <VerticalStackLayout Padding="20">
+
+        <!-- Campo para o nome do corredor -->
+        <Entry Placeholder="Nome do Corredor"
+               Text="{Binding Nome}" />
+
+        <!-- Campo para o número do corredor -->
+        <Entry Placeholder="Número do Corredor"
+               Text="{Binding Numero}" 
+               Keyboard="Numeric" />
+
+        <!-- Botão para adicionar o corredor -->
+        <Button Text="Adicionar"
+                Command="{Binding AdicionarCorredorCommand}" />
+
+        <!-- Mensagem de erro ou sucesso -->
+        <Label Text="{Binding MensagemErro}" 
+               TextColor="Red" 
+               HorizontalOptions="Center" />
+
+    </VerticalStackLayout>
+</ContentPage>
