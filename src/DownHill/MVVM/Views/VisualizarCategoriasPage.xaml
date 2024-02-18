@@ -6,7 +6,8 @@
     <ListView ItemsSource="{Binding Categorias}">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Nome}" Detail="{Binding Sexo}" />
+                <TextCell Text="{Binding Sexo}" Detail="{Binding NomeCategoria}" />
+
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

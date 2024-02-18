@@ -24,6 +24,9 @@
         <Button Text="Cadastrar Categoria" 
             Clicked="OnNavigateToCadastroCategoriaButtonClicked" />
 
+            <Button Text="Visualizar Categorias" 
+            Clicked="OnNavigateToVisualizarCategoriaButtonClicked" />
+            
         </VerticalStackLayout>
     </ScrollView>
 
