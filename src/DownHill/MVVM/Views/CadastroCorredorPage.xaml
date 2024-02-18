@@ -15,6 +15,15 @@
                Text="{Binding Numero}" 
                Keyboard="Numeric" />
 
+		<!-- Campo para a idade do corredor -->
+		<Entry Placeholder="Idade do Corredor"
+               Text="{Binding Numero}"
+               Keyboard="Numeric" />
+
+		<!-- Campo para o cpf do corredor -->
+		<Entry Placeholder="CPF do Corredor"
+               Text="{Binding Cpf}" />
+
         <!-- Botão para adicionar o corredor -->
         <Button Text="Adicionar"
                 Command="{Binding AdicionarCorredorCommand}" />

@@ -9,7 +9,8 @@ public class CadastroCorredorViewModel : ObservableObject
 {
     private string _nome;
     private int _numero;
-    private int _cpf;
+    private string _cpf;
+    private int _idade;
     private string _mensagemErro;
 
     private readonly CorredorRepository _corredorRepository; // Supondo que você tenha este repositório
@@ -35,6 +36,13 @@ public class CadastroCorredorViewModel : ObservableObject
         set => SetProperty(ref _cpf, value);
     }
 
+    // Propriedade para a idade do corredor
+    public int Idade
+    {
+        get => _idade;
+        set => SetProperty(ref _idade, value);
+    }
+
     // Propriedade para exibir mensagens de erro
     public string MensagemErro
     {
@@ -55,7 +63,7 @@ public class CadastroCorredorViewModel : ObservableObject
     {
         try
         {
-            var corredor = new Corredor { Nome = this.Nome, Numero = this.Numero, Cpf = this.Cpf };
+            var corredor = new Corredor { Nome = this.Nome, Numero = this.Numero, Cpf = this.Cpf, Idade = this.Idade };
             _corredorRepository.Add(corredor);
 
             // Notificar que um novo corredor foi adicionado
@@ -65,6 +73,7 @@ public class CadastroCorredorViewModel : ObservableObject
             Nome = string.Empty;
             Numero = 0;
             Cpf = string.Empty;
+            Idade = 0;
             MensagemErro = "Corredor adicionado com sucesso!";
         }
         catch (Exception ex)

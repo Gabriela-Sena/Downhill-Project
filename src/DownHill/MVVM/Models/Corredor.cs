@@ -14,5 +14,7 @@ namespace DownHill.MVVM.Models
 
         [MaxLength(14)]
         public string Cpf { get; set; }
+
+        public int Idade { get; set; }
     }
 }

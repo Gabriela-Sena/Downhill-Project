@@ -27,5 +27,14 @@
             await Shell.Current.GoToAsync("//VisualizarCorridasPage");
         }
 
+        private async void OnNavigateToVisualizarCategoriaButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//VisualizarCategoriasPage");
+        }
+
+        private async void OnNavigateToCadastroCategoriaButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//CadastroCategoriaPage");
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace DownHill.MVVM.Models
 
         public int IdadeMaxima { get; set; }
 
-        public char Sexo { get; set; }
+        [MaxLength(1)]
+        public string Sexo { get; set; }
     }
 }

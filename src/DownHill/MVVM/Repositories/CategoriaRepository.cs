@@ -27,7 +27,7 @@ public class CategoriaRepository
         return _database.Delete(categoria);
     }
 
-    public Corrida GetById(int numCategoria)
+    public Categoria GetById(int numCategoria)
     {
         return _database.Table<Categoria>().FirstOrDefault(c => c.NumCategoria == numCategoria);
     }

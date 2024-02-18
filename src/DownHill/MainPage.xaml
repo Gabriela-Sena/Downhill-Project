@@ -18,8 +18,11 @@
         <Button Text="Navegar para Cadastro de Corridas" 
             Clicked="OnNavigateToCadastroCorridaButtonClicked" />
 
-            <Button Text="Visualizar Corridas" 
+        <Button Text="Visualizar Corridas" 
             Clicked="OnNavigateToVisualizarCorridasButtonClicked" />
+
+        <Button Text="Cadastrar Categoria" 
+            Clicked="OnNavigateToCadastroCategoriaButtonClicked" />
 
         </VerticalStackLayout>
     </ScrollView>

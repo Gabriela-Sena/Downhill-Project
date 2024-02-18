@@ -24,6 +24,7 @@ namespace DownHill.Services
                 _database.CreateTable<Corredor>();
                 _database.CreateTable<Corrida>();
                 _database.CreateTable<Categoria>();
+                _database.CreateTable<RegistroCorrida>();
 
                 // Adicione outras tabelas conforme necessário
             }

@@ -1,9 +1,17 @@
+
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
+using DownHill.MVVM.Messages;
+using DownHill.MVVM.Models;
+using System.Windows.Input;
+
 public class CadastroCategoriaViewModel : ObservableObject
 {
     private string _nomeCategoria;
     private int _idadeMinima;
     private int _idadeMaxima;
-    private char _sexo;
+    private string _sexo;
     private string _mensagemErro;
 
     private readonly CategoriaRepository _categoriaRepository; // Supondo que você tenha este repositório
@@ -30,7 +38,7 @@ public class CadastroCategoriaViewModel : ObservableObject
     }
 
     // Propriedade para o sexo do corredor
-    public char Sexo
+    public string Sexo
     {
         get => _sexo;
         set => SetProperty(ref _sexo, value);
@@ -66,7 +74,7 @@ public class CadastroCategoriaViewModel : ObservableObject
             NomeCategoria = string.Empty;
             IdadeMinima = 0;
             IdadeMaxima = 0;
-            Sexo = '';
+            Sexo = string.Empty;
             MensagemErro = "Categoria adicionada com sucesso!";
         }
         catch (Exception ex)
