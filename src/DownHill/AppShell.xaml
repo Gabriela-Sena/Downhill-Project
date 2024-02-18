@@ -34,4 +34,16 @@
         <ShellContent ContentTemplate="{DataTemplate mvvmViews:VisualizarCorridasPage}" />
     </ShellItem>
 
+    <!-- Página de cadastro de categorias -->
+    <ShellItem Title="Cadastro de Categoria" Icon="AppIcon/add_icon.svg" Route="CadastroCategoriaPage">
+        <ShellContent>
+            <mvvmViews:CadastroCategoriaPage />
+        </ShellContent>
+    </ShellItem>
+
+    <!-- Página de visualizacao de categorias -->
+    <ShellItem Title="Visualizar Categoria" Icon="AppIcon/race_icon.svg" Route="VisualizarCategoriasPage">
+        <ShellContent ContentTemplate="{DataTemplate mvvmViews:VisualizarCategoriasPage}" />
+    </ShellItem>
+
 </Shell>
