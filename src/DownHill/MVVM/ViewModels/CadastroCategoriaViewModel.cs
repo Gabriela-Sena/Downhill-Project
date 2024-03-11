@@ -83,6 +83,4 @@ public class CadastroCategoriaViewModel : ObservableObject
             MensagemErro = $"Erro ao adicionar categoria: {ex.Message}";
         }
     }
-
-  
     }

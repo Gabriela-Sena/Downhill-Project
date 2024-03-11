@@ -34,7 +34,31 @@ public class VisualizarCategoriasViewModel : ObservableObject
 		WeakReferenceMessenger.Default.Register<VisualizarCategoriasViewModel, NotificationMessage>(this, OnCategoriaAdded);
 	}
 
-	private void LoadCategorias()
+    public class CategoriaSelecionadaMessage : NotificationMessage
+    {
+        public Categoria CategoriaSelecionada { get; }
+
+        public CategoriaSelecionadaMessage(Categoria categoriaSelecionada)
+            : base("CategoriaSelecionada")
+        {
+            CategoriaSelecionada = categoriaSelecionada;
+        }
+    }
+
+    private void EditarCategoria(Categoria categoria)
+    {
+        if (categoria != null)
+        {
+            // Enviar uma mensagem indicando que a categoria foi selecionada para edição
+            WeakReferenceMessenger.Default.Send(new CategoriaSelecionadaMessage(categoria));
+        }
+        else
+        {
+            MensagemErro = "Nenhuma categoria selecionada para edição.";
+        }
+    }
+
+    private void LoadCategorias()
 	{
 		var categoriasList = _categoriaRepository.GetAll();
 		Categorias = new ObservableCollection<Categoria>(categoriasList);
@@ -45,39 +69,6 @@ public class VisualizarCategoriasViewModel : ObservableObject
 	{
 		LoadCategorias();
 	}
-
-
-    private void EditarCategoria(Categoria categoriaEditada)
-    {
-        if (categoriaEditada != null)
-        {
-            try
-            {
-                // Atualiza os dados da categoria com os novos valores
-                var categoria = new Categoria
-                {
-                    NomeCategoria = categoriaEditada.NomeCategoria,
-                    IdadeMinima = categoriaEditada.IdadeMinima,
-                    IdadeMaxima = categoriaEditada.IdadeMaxima,
-                    Sexo = categoriaEditada.Sexo
-                };
-
-                // Chama o método de atualização do repositório
-                _categoriaRepository.Update(categoria);
-
-                // Notifica que a categoria foi atualizada
-                WeakReferenceMessenger.Default.Send(new NotificationMessage("UpdateCategoryList"));
-
-              
-                MensagemErro = "Categoria editada com sucesso!";
-            }
-            catch (Exception ex)
-            {
-                // exibe o erro
-                MensagemErro = $"Erro ao editar categoria: {ex.Message}";
-            }
-        }
-    }
 
     // Chame este método quando o ViewModel não for mais necessário
     public void UnsubscribeFromMessages()
