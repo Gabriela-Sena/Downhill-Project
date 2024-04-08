@@ -12,6 +12,7 @@ namespace DownHill
             // Registro do CorredorRepository no sistema de injeção de dependência
             builder.Services.AddSingleton<CorredorRepository>();
             builder.Services.AddSingleton<CorridaRepository>();
+            builder.Services.AddSingleton<CategoriaRepository>();
 
             builder
                 .UseMauiApp<App>()
