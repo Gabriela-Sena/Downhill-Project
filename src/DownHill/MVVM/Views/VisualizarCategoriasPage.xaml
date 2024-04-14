@@ -21,6 +21,7 @@
 
                         <Button Grid.Column="1" 
                                 Text="Editar" 
+                                Clicked="OnNavigateToUpdateCategoriaButtonClicked"
                                 Command="{Binding EditCommand}" CommandParameter="{Binding .}" />
                     </Grid>
                 </ViewCell>

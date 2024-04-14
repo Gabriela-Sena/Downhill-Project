@@ -10,5 +10,9 @@ namespace DownHill.MVVM.Views
             var viewModel = new VisualizarCategoriasViewModel(categoriaRepo);
             BindingContext = viewModel;
         }
+        private async void OnNavigateToUpdateCategoriaButtonClicked(object sender, EventArgs e)
+        {
+            await Shell.Current.GoToAsync("//UpdateCategoriaPage");
+        }
     }
 }
