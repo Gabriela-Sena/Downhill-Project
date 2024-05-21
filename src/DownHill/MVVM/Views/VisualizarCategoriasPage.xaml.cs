@@ -1,3 +1,5 @@
+using DownHill.MVVM.Models;
+
 namespace DownHill.MVVM.Views
 {
     public partial class VisualizarCategoriasPage : ContentPage
@@ -12,7 +14,13 @@ namespace DownHill.MVVM.Views
         }
         private async void OnNavigateToUpdateCategoriaButtonClicked(object sender, EventArgs e)
         {
-            await Shell.Current.GoToAsync("//UpdateCategoriaPage");
+            var button = sender as Button;
+            var categoria = button?.BindingContext as Categoria;
+            if (categoria != null)
+            {
+                await Shell.Current.GoToAsync("///UpdateCategoriaPage?NumCategoria={categoria.NumCategoria}");
+            }
         }
+
     }
 }

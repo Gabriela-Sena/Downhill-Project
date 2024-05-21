@@ -4,6 +4,7 @@ using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 using DownHill.MVVM.Messages;
 using DownHill.MVVM.Models;
+using DownHill.MVVM.Views;
 using System.Windows.Input;
 
 public class CadastroCategoriaViewModel : ObservableObject
@@ -76,6 +77,8 @@ public class CadastroCategoriaViewModel : ObservableObject
             IdadeMaxima = 0;
             Sexo = string.Empty;
             MensagemErro = "Categoria adicionada com sucesso!";
+            Shell.Current.GoToAsync("///VisualizarCategoriaPage");
+
         }
         catch (Exception ex)
         {

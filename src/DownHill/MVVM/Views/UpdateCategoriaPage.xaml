@@ -8,7 +8,8 @@
 
         <!-- Campo para o nome da categoria -->
         <Entry Placeholder="Nome da Categoria"
-               Text="{Binding NomeCategoria}" />
+               Text="{Binding NomeCategoria}"
+               />
 
         <!-- Campo para a idade minima da categoria -->
         <Entry Placeholder="Idade Minima"
@@ -17,7 +18,7 @@
         
         <!-- Campo para a idade maxima da categoria -->
         <Entry Placeholder="Idade Maxima"
-               Text="{Binding Numero}" 
+               Text="{Binding Idade}" 
                Keyboard="Numeric" />
 
 		<!-- Campo para o sexo da categoria -->

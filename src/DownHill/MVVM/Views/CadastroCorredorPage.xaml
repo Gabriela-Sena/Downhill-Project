@@ -17,7 +17,7 @@
 
 		<!-- Campo para a idade do corredor -->
 		<Entry Placeholder="Idade do Corredor"
-               Text="{Binding Numero}"
+               Text="{Binding Idade}"
                Keyboard="Numeric" />
 
 		<!-- Campo para o cpf do corredor -->

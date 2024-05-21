@@ -20,11 +20,13 @@ public class UpdateCategoriaViewModel : ObservableObject
     public string MensagemErro { get; private set; }
 
     public ICommand UpdateCategoriaCommand { get; }
+    public ICommand LoadCategoriaByIdCommand { get; }
 
     public UpdateCategoriaViewModel(CategoriaRepository categoriaRepository)
     {
         _categoriaRepository = categoriaRepository;
         UpdateCategoriaCommand = new RelayCommand(UpdateCategoria);
+        LoadCategoriaByIdCommand = new RelayCommand<int>(LoadCategoriaById);
     }
 
     private void UpdateCategoria()
@@ -34,6 +36,7 @@ public class UpdateCategoriaViewModel : ObservableObject
             if (CategoriaSelecionada != null)
             {
                 _categoriaRepository.Update(CategoriaSelecionada);
+                Console.WriteLine(CategoriaSelecionada.ToString());
 
                 // Notifica que a categoria foi atualizada
                 WeakReferenceMessenger.Default.Send(new NotificationMessage("UpdateCategoryList"));
@@ -48,6 +51,25 @@ public class UpdateCategoriaViewModel : ObservableObject
         catch (Exception ex)
         {
             MensagemErro = $"Erro ao editar categoria: {ex.Message}";
+        }
+    }
+    public void LoadCategoriaById(int id)
+    {
+        try
+        {
+            CategoriaSelecionada = _categoriaRepository.GetById(id);
+            if (CategoriaSelecionada == null)
+            {
+                MensagemErro = "Nenhuma categoria encontrada com o ID especificado.";
+            }
+            else
+            {
+                MensagemErro = null; 
+            }
+        }
+        catch (Exception ex)
+        {
+            MensagemErro = $"Erro ao carregar categoria: {ex.Message}";
         }
     }
 }

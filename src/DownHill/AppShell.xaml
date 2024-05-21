@@ -46,11 +46,4 @@
         <ShellContent ContentTemplate="{DataTemplate mvvmViews:VisualizarCategoriasPage}" />
     </ShellItem>
 
-    <!-- Página de atualizacao de categorias -->
-    <ShellItem Title="Atualização de Categoria" Icon="AppIcon/add_icon.svg" Route="UpdateCategoriaPage">
-        <ShellContent>
-            <mvvmViews:UpdateCategoriaPage />
-        </ShellContent>
-    </ShellItem>
-
 </Shell>

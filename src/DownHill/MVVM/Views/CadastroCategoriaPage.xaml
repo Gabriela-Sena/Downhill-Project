@@ -30,7 +30,7 @@
 
         <!-- Mensagem de erro ou sucesso -->
         <Label Text="{Binding MensagemErro}" 
-               TextColor="Red" 
+               TextColor="Green" 
                HorizontalOptions="Center" />
 
     </VerticalStackLayout>
